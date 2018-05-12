@@ -3,11 +3,9 @@ import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@SuppressWarnings("WeakerAccess")
 @DatabaseTable(tableName = "data")
 public class KipData {
-
-    private List<KipData> dataList = new ArrayList<KipData>();
 
     public static final String IVB_FIELD_NAME = "ivb";
     public static final String SYS_FIELD_NAME = "system";
@@ -23,7 +21,7 @@ public class KipData {
     public static final String T2_FIELD_NAME = "t2";
     public static final String T3_FIELD_NAME = "t3";
     public static final String TW_FIELD_NAME = "tw";
-
+    private List<KipData> dataList = new ArrayList<KipData>();
     @DatabaseField(generatedId = true)
     private int id;
 

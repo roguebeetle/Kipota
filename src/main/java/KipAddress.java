@@ -1,14 +1,10 @@
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-
 import java.util.ArrayList;
 import java.util.List;
-
+@SuppressWarnings("WeakerAccess")
 @DatabaseTable(tableName = "objects")
 public class KipAddress {
-    private List<KipAddress> objectusList = new ArrayList<KipAddress>();
-
-
     // for QueryBuilder to be able to find the fields
     //public static final String _FIELD_NAME = "";
     public static final String N_DINAM_FIELD_NAME = "N_dinam";
@@ -91,8 +87,7 @@ public class KipAddress {
     public static final String SIM1_FIELD_NAME = "SIM1";
     public static final String SIM2_FIELD_NAME = "SIM2";
     public static final String SIM3_FIELD_NAME = "SIM3";
-
-
+    private List<KipAddress> objectusList = new ArrayList<KipAddress>();
     @DatabaseField(generatedId = true)
     private int id;
 
@@ -427,6 +422,7 @@ public class KipAddress {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -628,7 +624,7 @@ public class KipAddress {
         return type_tsp_gvs;
     }
 
-    public void setType_tsp_gvs(String type_tsp) {
+    public void setType_tsp_gvs(String type_tsp_gvs) {
         this.type_tsp_gvs = type_tsp_gvs;
     }
 
@@ -636,7 +632,7 @@ public class KipAddress {
         return type_tsp_ot;
     }
 
-    public void setType_tsp_ot(String type_tsp) {
+    public void setType_tsp_ot(String type_tsp_ot) {
         this.type_tsp_ot = type_tsp_ot;
 
     }
@@ -1072,7 +1068,7 @@ public class KipAddress {
     public void setSim3(String sim3) {
         this.sim3 = sim3;
     }
-
+    @SuppressWarnings("unchecked")
     public List<KipAddress> list() {
         return new ArrayList(objectusList);
     }
